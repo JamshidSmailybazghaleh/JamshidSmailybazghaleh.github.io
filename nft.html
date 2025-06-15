@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Smaily NFT Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      text-align: center;
+    }
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem 0;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .nft-card {
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+    .nft-card:hover {
+      transform: translateY(-5px);
+    }
+    .nft-card img {
+      width: 100%;
+      height: auto;
+    }
+    .nft-card h3 {
+      margin: 1rem 0 0.5rem;
+    }
+    .nft-card p {
+      padding: 0 1rem 1rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    footer {
+      background-color: #eee;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>گالری NFT های رسمی اسمایلی</h1>
+</header>
+
+<div class="gallery">
+  <div class="nft-card">
+    <img src="nft1.jpg" alt="NFT 1">
+    <h3>اثر شماره ۱</h3>
+    <p>توضیحی کوتاه درباره این NFT هنری.</p>
+  </div>
+  <div class="nft-card">
+    <img src="nft2.jpg" alt="NFT 2">
+    <h3>اثر شماره ۲</h3>
+    <p>نمونه‌ای از آثار دیجیتال برند Smaily.</p>
+  </div>
+  <!-- NFT های بعدی را به همین سبک اضافه کنید -->
+</div>
+
+<footer>
+  © 2025 Jamshid Smaily Bazghaleh – All rights reserved.
+</footer>
+
+</body>
+</html>
