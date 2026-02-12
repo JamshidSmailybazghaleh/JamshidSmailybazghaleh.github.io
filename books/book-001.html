@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>کتاب 001 | Smaily Book Store</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body{font-family:Vazirmatn, sans-serif;margin:0;background:#f7f7f7;color:#111;direction:rtl}
+    header{background:#111;color:#fff;padding:16px}
+    header .wrap{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    a{color:inherit;text-decoration:none}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:#111;color:#fff}
+    .btn.outline{background:#fff;color:#111;border:1px solid #ddd}
+    .container{max-width:1100px;margin:18px auto;padding:0 14px}
+    .card{background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.06);overflow:hidden}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:420px 1fr}}
+    .cover{background:#fafafa;border-left:1px solid #eee;display:flex;align-items:center;justify-content:center;padding:18px}
+    .cover img{max-width:100%;border-radius:12px;border:1px solid #eee}
+    .content{padding:18px}
+    .title{font-size:1.6rem;margin:0 0 8px}
+    .sub{color:#444;margin:0 0 14px}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+    .meta div{background:#fafafa;border:1px solid #eee;border-radius:12px;padding:10px;font-size:.95rem}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    footer{margin-top:22px;padding:16px;color:#666;text-align:center}
+    .note{font-size:.9rem;color:#666;margin-top:10px}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div><b>Smaily Book Store</b></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn outline" href="/books.html">فهرست کتاب‌ها</a>
+        <a class="btn outline" href="/nft.html">گالری NFT</a>
+        <a class="btn" href="/">خانه</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="grid">
+
+        <div class="cover">
+          <!-- تصویر جلد را داخل assets بگذار و اسمش را همین کن -->
+          <img src="/assets/book-001-cover.jpg" alt="جلد کتاب 001">
+        </div>
+
+        <div class="content">
+          <h1 class="title">عنوان کتاب 001</h1>
+          <p class="sub">نویسنده: Smaily | نسخه: دیجیتال (PDF) / چاپی (در آینده)</p>
+
+          <p>
+            اینجا متن معرفی کوتاه کتاب قرار می‌گیرد. ۳ تا ۶ خط توضیح کافی است:
+            موضوع، حال‌و‌هوا، مخاطب، و ارزش پیشنهادی کتاب.
+          </p>
+
+          <div class="meta">
+            <div>زبان: فارسی</div>
+            <div>فرمت: PDF</div>
+            <div>تعداد صفحات: —</div>
+            <div>وضعیت انتشار: آماده فروش</div>
+          </div>
+
+          <div class="actions">
+            <!-- لینک خرید را بعداً می‌گذاری: درگاه، گوم‌رود، ژیوار، واتساپ، تلگرام، اوپن‌سی... -->
+            <a class="btn" href="#" onclick="alert('لینک خرید را اینجا قرار می‌دهیم');return false;">خرید / سفارش</a>
+
+            <!-- اگر نمونه PDF داری داخل pdf بگذار -->
+            <a class="btn outline" href="/pdf/book-001-sample.pdf">دانلود نمونه</a>
+
+            <!-- اگر NFT مرتبط داری، لینک مستقیم بده -->
+            <a class="btn outline" href="/nft.html">مشاهده NFT مرتبط</a>
+          </div>
+
+          <div class="note">
+            نکته: برای جلوگیری از 404، نام فایل‌ها را با حروف کوچک بگذار (مثلاً book-001-cover.jpg).
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>© 2025 Smaily — All rights reserved.</footer>
+  </div>
+</body>
+</html>
