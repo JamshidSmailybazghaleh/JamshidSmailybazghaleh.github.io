@@ -1,254 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Smaily Knowledge Archive — FA</title>
+  <title>آرشیو دانشی اسماعیلی — نسخه فارسی</title>
 
   <style>
-    body{
-      font-family: sans-serif;
-      background:#f8fafc;
-      padding:30px;
-      margin:0;
-      color:#111827;
-      line-height:1.9;
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --accent:#0f766e;
+      --border:#e5e7eb;
+      --shadow: 0 14px 40px rgba(0,0,0,.08);
+      --radius:18px;
     }
-    .box{max-width:900px;margin:0 auto}
-    .topbar{
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      padding:22px 14px 28px;
+      font-family: Tahoma, Arial, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header{
+      max-width:980px;
+      margin:0 auto 14px;
       display:flex;
       gap:10px;
       align-items:center;
       justify-content:space-between;
       flex-wrap:wrap;
-      margin-bottom:14px;
     }
-    .brand{
-      font-weight:800;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .lang{
+    .topLeft{
       display:flex;
       gap:10px;
-      flex-wrap:wrap;
       align-items:center;
     }
     .btn{
       display:inline-block;
-      margin-top:10px;
-      background:#0f766e;
-      color:#fff;
-      padding:8px 14px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      border:1px solid rgba(15,118,110,.15);
-    }
-    .btn.secondary{
-      background:#111827;
-      border-color:rgba(17,24,39,.15);
-    }
-    .card{
-      background:white;
-      padding:18px;
-      margin:12px 0;
+      padding:12px 14px;
       border-radius:12px;
-      box-shadow:0 3px 14px rgba(0,0,0,.06);
-      border:1px solid rgba(2,6,23,.06);
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid var(--border);
+      background:#fff;
+      color:#111827;
     }
-    .badge{
+    .btn-accent{
+      background: var(--accent);
+      color:#fff;
+      border-color: rgba(0,0,0,.06);
+    }
+
+    .brand{
+      font-weight:900;
+      color:#111827;
+      opacity:.9;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+    }
+    h1{
+      margin:10px 0 4px;
+      font-size:26px;
+    }
+    .subtitle{
+      margin:0 0 18px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    @media (min-width: 720px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px 16px 14px;
+    }
+    .tag{
       display:inline-block;
       font-size:12px;
-      background:#ecfeff;
-      color:#155e75;
-      padding:4px 10px;
+      padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(21,94,117,.15);
+      background: rgba(15,118,110,.10);
+      color: var(--accent);
+      font-weight:800;
       margin-bottom:10px;
-      font-weight:700;
     }
-    h1{margin:8px 0 6px 0;font-size:28px}
-    h2{margin:0 0 10px 0;font-size:18px}
-    h3{margin:0 0 6px 0}
-    p{margin:10px 0}
-    small{color:#6b7280}
-    .footer{
-      margin-top:24px;
-      padding-top:14px;
-      border-top:1px solid rgba(2,6,23,.08);
-      color:#6b7280;
+    .title{
+      margin:0 0 8px;
+      font-size:18px;
+      font-weight:900;
+    }
+    .desc{
+      margin:0 0 12px;
+      color:var(--muted);
+      line-height:1.9;
       font-size:14px;
     }
-    a{color:#0f766e;text-decoration:none}
-    a:hover{text-decoration:underline}
+    .actions{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .actionBtn{
+      padding:12px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:900;
+      background: var(--accent);
+      color:#fff;
+    }
+
+    footer{
+      max-width:980px;
+      margin:14px auto 0;
+      color:var(--muted);
+      font-size:13px;
+      opacity:.9;
+    }
+    footer a{ color: var(--accent); text-decoration:none; font-weight:800; }
   </style>
 </head>
 
 <body>
-  <div class="box">
+  <header>
+    <div class="topLeft">
+      <!-- ✅ برگشت به صفحه انتخاب زبان -->
+      <a class="btn" href="../../index.html">بازگشت</a>
 
-    <div class="topbar">
-      <div class="brand">Smaily Knowledge Archive</div>
-      <div class="lang">
-        <a class="btn secondary" href="/archive/en/">English Version</a>
-        <a class="btn" href="mailto:support@smailybookstore.com?subject=Access%20Request%20%E2%80%94%20Smaily%20Knowledge%20Archive">درخواست دسترسی</a>
-      </div>
+      <!-- ✅ رفتن به نسخه انگلیسی (مسیر نسبی صحیح) -->
+      <a class="btn" href="../en/index.html">English Version</a>
+
+      <!-- (اختیاری) درخواست دسترسی -->
+      <a class="btn btn-accent" href="../../payment/">درخواست دسترسی</a>
     </div>
 
+    <div class="brand">Smaily Knowledge Archive</div>
+  </header>
+
+  <main class="wrap">
     <h1>آرشیو دانشی اسماعیلی — نسخه فارسی</h1>
-    <p>آرشیو رسمی برای معرفی آثار، ساختار دانشی، و مسیر انتشار (مدل دوزبانه).</p>
+    <p class="subtitle">
+      این صفحه نسخه عمومی آرشیو است. نمایش آثار به معنی عرضه عمومی چاپی یا فروش رسمی داخلی نیست.
+      دسترسی کامل به برخی فایل‌ها فقط از طریق درخواست رسمی و بررسی سطح دسترسی انجام می‌شود.
+    </p>
 
-    <div class="card">
-      <div class="badge">اطلاعیه رسمی</div>
-      <p>
-        این صفحه بخشی از آرشیو دانشی اسماعیلی است.  
-        نمایش آثار به معنی عرضه عمومی چاپی یا فروش رسمی داخلی نیست.  
-        دسترسی کامل به برخی فایل‌ها فقط از طریق درخواست رسمی و بررسی سطح دسترسی انجام می‌شود.
-      </p>
-      <p>
-        <small>
-          تماس پشتیبانی: 
-          <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a>
-        </small>
-      </p>
-    </div>
+    <section class="grid">
+      <article class="card">
+        <span class="tag">فلسفه / حکمت</span>
+        <h2 class="title">فلسفه گمشده گیلان — حکمت دیلمان</h2>
+        <p class="desc">چارچوب‌های فلسفی و حکمی شمال ایران (پروژه پژوهشی/دانشنامه‌ای).</p>
+        <div class="actions">
+          <!-- ✅ اگر صفحه کتاب دارید این را اصلاح کنید -->
+          <a class="actionBtn" href="../../books/">مشاهده</a>
+        </div>
+      </article>
 
-    <!-- BOOK LIST -->
-    <div class="card">
-      <div class="badge">فلسفه / حکمت</div>
-      <h3>فلسفه گمشده گیلان — حکمت دیلمان</h3>
-      <small>چارچوب‌های فلسفی و حکمی شمال ایران (پروژه پژوهشی-دانشنامه‌ای).</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D9%81%D9%84%D8%B3%D9%81%D9%87%20%DA%AF%D9%85%D8%B4%D8%AF%D9%87%20%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20%2F%20%D8%AD%DA%A9%D9%85%D8%AA%20%D8%AF%DB%8C%D9%84%D9%85%D8%A7%D9%86">درخواست دسترسی</a>
-    </div>
+      <article class="card">
+        <span class="tag">فرهنگ / تاریخ</span>
+        <h2 class="title">گیلان، سرزمین کهن با هویت پنهان</h2>
+        <p class="desc">سفر دانشنامه‌ای در فرهنگ، طبیعت، و حکمت زیسته.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">مشاهده</a>
+        </div>
+      </article>
 
-    <div class="card">
-      <div class="badge">فرهنگ / تاریخ</div>
-      <h3>گیلان، سرزمین کهن با هویت پنهان</h3>
-      <small>سفر دانشنامه‌ای در فرهنگ، طبیعت، و حکمت زیسته.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%DA%AF%DB%8C%D9%84%D8%A7%D9%86%D8%8C%20%D8%B3%D8%B1%D8%B2%D9%85%DB%8C%D9%86%20%DA%A9%D9%87%D9%86%20%D8%A8%D8%A7%20%D9%87%D9%88%DB%8C%D8%AA%20%D9%BE%D9%86%D9%87%D8%A7%D9%86">درخواست دسترسی</a>
-    </div>
+      <article class="card">
+        <span class="tag">حکمت / اسطوره</span>
+        <h2 class="title">پرواز خاموش حکمت شمال — نقوش دیلمان</h2>
+        <p class="desc">بازخوانی حکمت، اسطوره، و هویت منطقه‌ای.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">مشاهده</a>
+        </div>
+      </article>
 
-    <div class="card">
-      <div class="badge">حکمت / اسطوره</div>
-      <h3>پرواز خاموش حکمت شمال — ققنوس دیلمان</h3>
-      <small>بازخوانی حکمت، اسطوره، و هویت منطقه‌ای.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D9%82%D9%82%D9%86%D9%88%D8%B3%20%D8%AF%DB%8C%D9%84%D9%85%D8%A7%D9%86%20%2F%20%D9%BE%D8%B1%D9%88%D8%A7%D8%B2%20%D8%AE%D8%A7%D9%85%D9%88%D8%B4">درخواست دسترسی</a>
-    </div>
+      <article class="card">
+        <span class="tag">سلامت / سبک زندگی</span>
+        <h2 class="title">راز عمر طولانی</h2>
+        <p class="desc">نگاه کاربردی به سبک زندگی، تندرستی، و عادت‌های پایدار.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">مشاهده</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
-    <div class="card">
-      <div class="badge">سلامت / سبک زندگی</div>
-      <h3>راز عمر طولانی</h3>
-      <small>نگاهی کاربردی به سبک زندگی، تندرستی، و عادت‌های پایدار.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%B1%D8%A7%D8%B2%20%D8%B9%D9%85%D8%B1%20%D8%B7%D9%88%D9%84%D8%A7%D9%86%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">انسان / آینده</div>
-      <h3>انسان، نور و آینده</h3>
-      <small>روایت الهام‌بخش درباره آینده انسان و معنای روشنایی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%A7%D9%86%D8%B3%D8%A7%D9%86%D8%8C%20%D9%86%D9%88%D8%B1%20%D9%88%20%D8%A2%DB%8C%D9%86%D8%AF%D9%87">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">پروپوزال / بین‌الملل</div>
-      <h3>پروپوزال جهانی</h3>
-      <small>راهنمای چارچوب‌بندی و استانداردسازی پروپوزال‌های بین‌المللی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D9%BE%D8%B1%D9%88%D9%BE%D9%88%D8%B2%D8%A7%D9%84%20%D8%AC%D9%87%D8%A7%D9%86%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">انتشارات / گزارش</div>
-      <h3>پروژه جامع انتشارات — گزارش نهایی</h3>
-      <small>نقشه راه، ساختار پروژه، و خروجی‌های اجرایی انتشار.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%AC%D8%A7%D9%85%D8%B9%20%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20(%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4%20%D9%86%D9%87%D8%A7%DB%8C%DB%8C)">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">رزومه / بازار جهانی</div>
-      <h3>رزومه برای بازار جهانی</h3>
-      <small>قالب‌ها و استانداردهای ارائه رزومه برای بازار بین‌المللی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%B1%D8%B2%D9%88%D9%85%D9%87%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%20%D8%AC%D9%87%D8%A7%D9%86%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">انرژی / توسعه پایدار</div>
-      <h3>انرژی و آینده پایدار</h3>
-      <small>مسیرهای انرژی، پایداری، و آینده سبز.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%A7%D9%86%D8%B1%DA%98%DB%8C%20%D9%88%20%D8%A2%DB%8C%D9%86%D8%AF%D9%87%20%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">استاندارد / مدیریت</div>
-      <h3>استانداردهای بین‌المللی و ملی</h3>
-      <small>چارچوب‌های استاندارد برای پروژه‌ها و اسناد رسمی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF%D9%87%D8%A7%DB%8C%20%D8%A8%DB%8C%D9%86%E2%80%8C%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C%20%D9%88%20%D9%85%D9%84%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">ادبیات / روایت</div>
-      <h3>سکوت روی نیمکت بارانی</h3>
-      <small>متن ادبی با فضای درون‌نگر و شاعرانه.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%B3%DA%A9%D9%88%D8%AA%20%D8%B1%D9%88%DB%8C%20%D9%86%DB%8C%D9%85%DA%A9%D8%AA%20%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">انسانیت</div>
-      <h3>یک قطره مهربانی</h3>
-      <small>روایت‌های کوتاه از شفقت و انسان‌دوستی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%DB%8C%DA%A9%20%D9%82%D8%B7%D8%B1%D9%87%20%D9%85%D9%87%D8%B1%D8%A8%D8%A7%D9%86%DB%8C">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">زبان / دانشنامه</div>
-      <h3>زبان گیلکی — پروژه جهانی دانشنامه</h3>
-      <small>ساختار، احیا، و جهانی‌سازی زبان گیلکی (مدل دانشنامه‌ای).</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%B2%D8%A8%D8%A7%D9%86%20%DA%AF%DB%8C%D9%84%DA%A9%DB%8C%20(%D9%BE%D8%B1%D9%88%DA%98%D9%87%20%D8%AC%D9%87%D8%A7%D9%86%DB%8C%20%D8%AF%D8%A7%D9%86%D8%B4%D9%86%D8%A7%D9%85%D9%87)">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">فرهنگ‌ها</div>
-      <h3>درخت فرهنگ‌ها</h3>
-      <small>ریشه‌ها، شاخه‌ها، و گفت‌وگوی جهانی میان فرهنگ‌ها.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%AF%D8%B1%D8%AE%D8%AA%20%D9%81%D8%B1%D9%87%D9%86%DA%AF%E2%80%8C%D9%87%D8%A7">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">تحصیل / بورسیه</div>
-      <h3>رزومه تحصیلی و انگیزه‌نامه</h3>
-      <small>مدل‌های استاندارد برای پذیرش و مسیرهای تحصیلی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%D8%B1%D8%B2%D9%88%D9%85%D9%87%20%D8%AA%D8%AD%D8%B5%DB%8C%D9%84%DB%8C%20%D9%88%20%D8%A7%D9%86%DA%AF%DB%8C%D8%B2%D9%87%E2%80%8C%D9%86%D8%A7%D9%85%D9%87">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">مصاحبه / بورسیه</div>
-      <h3>۱۰ گام برای موفقیت در مصاحبه بورسیه</h3>
-      <small>راهنمای آماده‌سازی، پاسخ‌دهی، و ساختار ارائه حرفه‌ای.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%2010%20%DA%AF%D8%A7%D9%85%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D9%85%D9%88%D9%81%D9%82%DB%8C%D8%AA%20%D8%AF%D8%B1%20%D9%85%D8%B5%D8%A7%D8%AD%D8%A8%D9%87%20%D8%A8%D9%88%D8%B1%D8%B3%DB%8C%D9%87">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-      <div class="badge">چندزبانه</div>
-      <h3>چراغی در تاریکی — سه‌زبانه</h3>
-      <small>اثر چندزبانه با رویکرد الهام‌بخش و معنوی.</small><br />
-      <a class="btn" href="mailto:support@smailybookstore.com?subject=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%AF%D8%B3%D8%AA%D8%B1%D8%B3%DB%8C%20%E2%80%94%20%DA%86%D8%B1%D8%A7%D8%BA%DB%8C%20%D8%AF%D8%B1%20%D8%AA%D8%A7%D8%B1%DB%8C%DA%A9%DB%8C%20(%D8%B3%D9%87%E2%80%8C%D8%B2%D8%A8%D8%A7%D9%86%D9%87)">درخواست دسترسی</a>
-    </div>
-
-    <div class="card">
-  <div class="badge">حکمت / فلسفه</div>
-  <h3>حکمت دیلمان</h3>
-  <small>فلسفه گمشده گیلان</small><br>
-  <a class="btn" href="/books/wisdom-of-deylaman/fa/">صفحه اثر</a>
-</div>
-   
-    <div class="footer">
-     
-      <div>© Smaily Book Store — Smaily Knowledge Archive</div>
-      <div>Contact: <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a></div>
-      <div><small>نسخه فارسی — مسیر: <b>/archive/fa/</b></small></div>
-    </div>
-
-  </div>
+  <footer class="wrap">
+    تماس پشتیبانی: <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a>
+  </footer>
 </body>
 </html>
