@@ -1,98 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Smaily Knowledge Archive — EN</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smaily Knowledge Archive — English</title>
 
-<style>
-body{
-  font-family: Arial, sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-  margin:0;
-  padding:40px;
-}
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#020617;
+      --text:#e5e7eb;
+      --muted:#cbd5e1;
+      --gold:#fbbf24;
+      --border:#1f2937;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      padding:22px 14px 28px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      position:relative;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
+        url("../../img/simorgh-hatch.png") center/cover no-repeat;
+      opacity:.22;
+      filter: contrast(1.05) blur(1px);
+      z-index:-1;
+    }
 
-.container{
-  max-width:900px;
-  margin:auto;
-}
+    header{
+      max-width:980px;
+      margin:0 auto 14px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .left{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(2,6,23,.55);
+      color:#fff;
+    }
+    .btn-gold{
+      background: rgba(251,191,36,.15);
+      border-color: rgba(251,191,36,.35);
+      color: var(--gold);
+    }
+    .brand{
+      font-weight:900;
+      opacity:.9;
+    }
 
-h1{
-  color:#fbbf24;
-}
+    .wrap{ max-width:980px; margin:0 auto; }
+    h1{ margin:10px 0 6px; font-size:28px; color: var(--gold); }
+    .subtitle{ margin:0 0 18px; color: var(--muted); line-height:1.8; }
 
-.card{
-  background:#020617;
-  border:1px solid #1f2937;
-  border-radius:12px;
-  padding:20px;
-  margin-bottom:20px;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media(min-width:720px){
+      .grid{ grid-template-columns:1fr 1fr; }
+    }
+    .card{
+      background: rgba(2,6,23,.78);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:16px 16px 14px;
+      backdrop-filter: blur(8px);
+    }
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(251,191,36,.12);
+      color: var(--gold);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .title{ margin:0 0 8px; font-size:18px; font-weight:900; }
+    .desc{ margin:0 0 12px; color: var(--muted); line-height:1.8; font-size:14px; }
 
-.badge{
-  display:inline-block;
-  background:#1f2937;
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:12px;
-  margin-bottom:10px;
-}
+    .actions{ display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+    .actionBtn{
+      padding:12px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:900;
+      background:#1d4ed8;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+    }
 
-.footer{
-  opacity:.7;
-  margin-top:40px;
-  font-size:14px;
-}
-a{
-  color:#38bdf8;
-  text-decoration:none;
-}
-</style>
+    footer{
+      max-width:980px;
+      margin:14px auto 0;
+      color: var(--muted);
+      font-size:13px;
+      opacity:.9;
+    }
+    footer a{ color: var(--gold); text-decoration:none; font-weight:800; }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <header>
+    <div class="left">
+      <!-- ✅ back to root -->
+      <a class="btn" href="../../index.html">Back</a>
 
-<h1>Smaily Knowledge Archive</h1>
-<p>Official bilingual knowledge & publication archive.</p>
+      <!-- ✅ go to Persian -->
+      <a class="btn" href="../fa/index.html">نسخه فارسی</a>
 
-<div class="card">
-<div class="badge">PHILOSOPHY</div>
-<h3>Gilan — The Ancient Land</h3>
-<p>Encyclopedic cultural-philosophical work.</p>
-</div>
+      <!-- optional access request -->
+      <a class="btn btn-gold" href="../../payment/">Request Access</a>
+    </div>
 
-<div class="card">
-<div class="badge">WISDOM</div>
-<h3>The Lost Philosophy of Gilan</h3>
-<p>Wisdom traditions and regional philosophy.</p>
-</div>
+    <div class="brand">Smaily Knowledge Archive</div>
+  </header>
 
-<div class="card">
-<div class="badge">HUMANITY</div>
-<h3>A Drop of Kindness</h3>
-<p>Stories of compassion and humanity.</p>
-</div>
+  <main class="wrap">
+    <h1>Smaily Knowledge Archive</h1>
+    <p class="subtitle">Official bilingual knowledge &amp; publication archive.</p>
 
-<div class="card">
-<div class="badge">GLOBAL</div>
-<h3>Global Proposal Guide</h3>
-<p>Academic & international proposal framework.</p>
-</div>
+    <section class="grid">
+      <article class="card">
+        <span class="tag">PHILOSOPHY</span>
+        <h2 class="title">Gilan — The Ancient Land</h2>
+        <p class="desc">Encyclopedic cultural-philosophical work.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">Open</a>
+        </div>
+      </article>
 
-  <div class="card">
-  <div class="badge">Philosophy</div>
-  <h3>Wisdom of Deylaman</h3>
-  <small>Lost Philosophy of Gilan</small><br>
-  <a class="btn" href="/books/wisdom-of-deylaman/en/">Book Page</a>
-  </div>
+      <article class="card">
+        <span class="tag">WISDOM</span>
+        <h2 class="title">The Lost Philosophy of Gilan</h2>
+        <p class="desc">Wisdom traditions and regional philosophy.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">Open</a>
+        </div>
+      </article>
 
-  <div class="footer">
-Contact: support@smailybookstore.com
-</div>
+      <article class="card">
+        <span class="tag">HUMANITY</span>
+        <h2 class="title">A Drop of Kindness</h2>
+        <p class="desc">Stories of compassion and humanity.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">Open</a>
+        </div>
+      </article>
 
-</div>
+      <article class="card">
+        <span class="tag">GLOBAL</span>
+        <h2 class="title">Global Proposal Guide</h2>
+        <p class="desc">Academic &amp; international proposal framework.</p>
+        <div class="actions">
+          <a class="actionBtn" href="../../books/">Open</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Contact: <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a>
+  </footer>
 </body>
 </html>
