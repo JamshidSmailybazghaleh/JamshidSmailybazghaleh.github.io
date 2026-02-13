@@ -6,11 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
   margin:0;
   font-family: Arial, sans-serif;
   background:#0f172a;
   color:#e5e7eb;
+  text-align:center;
+  overflow-x:hidden;
 }
 
 /* ترام سیمرغ */
@@ -19,78 +22,116 @@ body::before{
   position:fixed;
   inset:0;
   background:
-    linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
+    linear-gradient(rgba(15,23,42,.92), rgba(15,23,42,.96)),
     url("/img/simorgh-hatch.png") center/cover no-repeat;
-  opacity:.20;
-  filter: contrast(1.05) blur(1px);
+  opacity:.22;
+  filter:contrast(1.05) blur(1px);
   z-index:-1;
 }
 
-/* لوگو */
+/* کانتینر */
+.wrap{
+  max-width:720px;
+  margin:auto;
+  padding:40px 20px 60px;
+}
+
+/* لوگو دایره‌ای بدون کادر مربع */
 .logo{
-  width:110px;
-  margin:40px auto 10px;
+  width:120px;
+  height:120px;
+  object-fit:contain;
+  border-radius:50%;
+  background:#ffffff;
+  padding:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  margin:20px auto 10px;
   display:block;
 }
 
 /* عنوان */
 h1{
-  text-align:center;
-  font-size:42px;
   color:#fbbf24;
-  margin:10px 0 8px;
+  font-size:36px;
+  margin:18px 0 8px;
 }
 
 .subtitle{
-  text-align:center;
   font-size:18px;
-  opacity:.85;
+  opacity:.9;
+  margin-bottom:28px;
 }
 
 /* کارت */
 .card{
-  max-width:520px;
-  margin:40px auto;
   background:#020617;
   border:1px solid #1f2937;
   border-radius:18px;
-  padding:34px;
-  text-align:center;
+  padding:34px 22px;
+  margin-top:26px;
   box-shadow:0 20px 60px rgba(0,0,0,.6);
 }
 
 .card h2{
   margin-top:0;
-  font-size:26px;
+  font-size:22px;
+  margin-bottom:18px;
 }
 
-/* دکمه */
+/* دکمه‌ها */
 .btn{
   display:block;
-  margin:16px auto;
-  padding:16px 22px;
-  border-radius:12px;
+  margin:18px auto;
+  padding:18px 26px;
+  border-radius:14px;
   text-decoration:none;
-  font-weight:700;
+  font-weight:800;
   font-size:18px;
-  width:80%;
-  max-width:260px;
-  color:#fff;
+  width:90%;
+  max-width:320px;
+  letter-spacing:.3px;
+  box-shadow:0 6px 22px rgba(0,0,0,.45);
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+  transition:.15s;
 }
 
-.fa{ background:#0f766e; }
-.en{ background:#1d4ed8; }
+/* فارسی — اصلاح خوانایی */
+.btn-fa{
+  background:#16a085;
+  color:#ffffff;
+  border:2px solid #1abc9c;
+}
 
+.btn-fa:active{
+  transform:scale(.98);
+  background:#138d75;
+}
+
+/* انگلیسی */
+.btn-en{
+  background:#1d4ed8;
+  color:#ffffff;
+  border:2px solid #3b82f6;
+}
+
+.btn-en:active{
+  transform:scale(.98);
+  background:#1e40af;
+}
+
+/* فوتر */
 .footer{
-  text-align:center;
-  margin:60px 0 30px;
+  margin-top:48px;
   font-size:14px;
   opacity:.7;
 }
+
 </style>
 </head>
 
 <body>
+
+<div class="wrap">
 
 <img src="/img/logo-main-light.png" class="logo">
 
@@ -100,15 +141,22 @@ Official bilingual knowledge & publication archive
 </div>
 
 <div class="card">
-  <h2>Select Language</h2>
+<h2>Select Language</h2>
 
-  <a class="btn fa" href="/archive/fa/">فارسی</a>
-  <a class="btn en" href="/archive/en/">English</a>
+<a class="btn btn-fa" href="/archive/fa/">
+نسخه فارسی
+</a>
+
+<a class="btn btn-en" href="/archive/en/">
+English Version
+</a>
 
 </div>
 
 <div class="footer">
 © Smaily Book Store
+</div>
+
 </div>
 
 </body>
