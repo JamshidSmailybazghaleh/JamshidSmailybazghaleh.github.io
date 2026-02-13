@@ -1,90 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smaily Book Store</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smaily Knowledge Archive</title>
+
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#020617;
+      --text:#e5e7eb;
+      --muted:#cbd5e1;
+      --gold:#fbbf24;
+      --border:#1f2937;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --btnRadius:14px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 18px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      position:relative;
+      overflow-x:hidden;
+    }
+
+    /* لایه پس‌زمینه ترام (اختیاری) */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
+        url("img/simorgh-hatch.png") center/cover no-repeat;
+      opacity:.22;
+      filter: contrast(1.05) blur(1px);
+      z-index:-1;
+    }
+
+    .wrap{
+      width:min(720px, 100%);
+      text-align:center;
+    }
+
+    .logoWrap{
+      width:180px;
+      height:180px;
+      margin:0 auto 18px;
+      border-radius:9999px;
+      background: rgba(255,255,255,.95);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 10px 40px rgba(0,0,0,.45);
+    }
+    .logoWrap img{
+      width:138px;
+      height:auto;
+      display:block;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height:1.1;
+      color: var(--gold);
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0 0 22px;
+      font-size: clamp(15px, 2.6vw, 18px);
+      color: var(--muted);
+      opacity:.95;
+    }
+
+    .card{
+      margin: 0 auto;
+      width:min(560px, 100%);
+      background: rgba(2,6,23,.82);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:26px 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+    .card h2{
+      margin:0 0 14px;
+      font-size:22px;
+      letter-spacing:.2px;
+      color:#fff;
+    }
+
+    .btn{
+      display:block;
+      width:min(320px, 92%);
+      margin:12px auto;
+      padding:16px 18px;
+      border-radius: var(--btnRadius);
+      text-decoration:none;
+      font-weight:800;
+      font-size:18px;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      transform: translateZ(0);
+    }
+    .btn:hover{ filter:brightness(1.04); }
+
+    .btn-fa{
+      background:#0f766e; /* سبز */
+      font-family: Tahoma, Arial, system-ui, sans-serif;
+      font-size:20px; /* خواناتر */
+      letter-spacing:0;
+    }
+    .btn-en{
+      background:#1d4ed8; /* آبی */
+    }
+
+    .note{
+      margin:14px 0 0;
+      font-size:13px;
+      opacity:.75;
+      color: var(--muted);
+    }
+
+    .footer{
+      margin-top:16px;
+      font-size:13px;
+      opacity:.7;
+      color: var(--muted);
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
 
-  <header class="bg-white shadow-md p-4 flex items-center justify-between">
-    <div class="text-xl font-bold">Smaily Book Store</div>
-    <nav class="space-x-4 text-sm">
-      <a href="#home" class="hover:underline">Home</a>
-      <a href="#books" class="hover:underline">Books</a>
-      <a href="#nfts" class="hover:underline">NFT</a>
-      <a href="#contact" class="hover:underline">Contact</a>
-    </nav>
-  </header>
-
-  <section id="home" class="text-center py-16 bg-gradient-to-b from-blue-50 to-white">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Where Knowledge Meets Soul</h1>
-    <p class="text-lg text-gray-600 max-w-2xl mx-auto px-6">
-      Explore cultural, educational, and philosophical works by Smaily — books and curated NFT collections.
-    </p>
-
-    <div class="mt-8 flex items-center justify-center gap-4 flex-wrap px-6">
-      <a href="#books" class="px-6 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-black">
-        Browse Books
-      </a>
-      <a href="/SmailyNFTs/nft.html" class="px-6 py-3 bg-white border border-gray-300 rounded-lg shadow hover:bg-gray-100">
-        View NFT Gallery
-      </a>
+<body>
+  <main class="wrap">
+    <div class="logoWrap" aria-label="Smaily logo">
+      <img src="img/logo-main-light.png" alt="Smaily Book Store logo">
     </div>
-  </section>
 
-  <section id="books" class="max-w-4xl mx-auto py-14 px-6">
-    <h2 class="text-2xl font-bold mb-3">Books</h2>
-    <p class="text-gray-600 mb-6">
-      Collections include cultural research, philosophy, personal development, and practical guides.
-    </p>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold mb-2">Featured Projects</h3>
-        <ul class="text-gray-600 list-disc list-inside">
-          <li>Phoenix of Deylaman</li>
-          <li>Gilan Series</li>
-          <li>Mini Books (Educational)</li>
-        </ul>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h3 class="font-semibold mb-2">Download / Access</h3>
-        <p class="text-gray-600">
-          This page can later link to free samples, paid downloads, and storefront pages.
-        </p>
-      </div>
-    </div>
-  </section>
+    <h1>Smaily Knowledge Archive</h1>
+    <p class="sub">Official bilingual knowledge &amp; publication archive</p>
 
-  <section id="nfts" class="max-w-4xl mx-auto py-14 px-6">
-    <h2 class="text-2xl font-bold mb-3">NFT</h2>
-    <p class="text-gray-600 mb-6">
-      Curated book covers and collectible text sets published as NFTs.
-    </p>
-    <div class="bg-white p-6 rounded-xl shadow flex items-center justify-between flex-wrap gap-4">
-      <div>
-        <div class="font-semibold">NFT Gallery</div>
-        <div class="text-gray-600 text-sm">Open the gallery page you already built.</div>
-      </div>
-      <a href="/SmailyNFTs/nft.html" class="px-5 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-        Open Gallery
-      </a>
-    </div>
-  </section>
+    <section class="card">
+      <h2>Select Language</h2>
 
-  <section id="contact" class="max-w-4xl mx-auto py-14 px-6">
-    <h2 class="text-2xl font-bold mb-3">Contact</h2>
-    <p class="text-gray-600">
-      Add contact links here (email, social, GitHub).  
-      For now, you can keep it minimal and professional.
-    </p>
-  </section>
+      <!-- ✅ مسیرها نسبی هستند و قطعی کار می‌کنند -->
+      <a class="btn btn-fa" href="archive/fa/index.html">فارسی</a>
+      <a class="btn btn-en" href="archive/en/index.html">English</a>
 
-  <footer class="bg-white border-t mt-10 p-4 text-center text-sm text-gray-500">
-    © 2026 Smaily Book Store. All rights reserved.
-  </footer>
+      <p class="note">Access is controlled — request-based delivery</p>
+    </section>
 
+    <div class="footer">© Smaily Book Store</div>
+  </main>
 </body>
 </html>
-
