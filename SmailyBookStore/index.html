@@ -1,61 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <title>Smaily Knowledge Archive</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<title>Smaily Knowledge Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#0f172a;
-      color:#e5e7eb;
-      margin:0;
-      padding:40px;
-      text-align:center;
-    }
-    .box{
-      max-width:700px;
-      margin:auto;
-    }
-    h1{
-      color:#fbbf24;
-      margin-bottom:10px;
-    }
-    .card{
-      background:#020617;
-      border:1px solid #1f2937;
-      border-radius:14px;
-      padding:28px;
-      margin-top:30px;
-    }
-    .btn{
-      display:inline-block;
-      margin:12px;
-      padding:14px 22px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:16px;
-      color:#fff;
-    }
-    .fa{ background:#0f766e; }
-    .en{ background:#1d4ed8; }
-    small{ opacity:.7; }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+/* ترام سیمرغ */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
+    url("/img/simorgh-hatch.png") center/cover no-repeat;
+  opacity:.20;
+  filter: contrast(1.05) blur(1px);
+  z-index:-1;
+}
+
+/* لوگو */
+.logo{
+  width:110px;
+  margin:40px auto 10px;
+  display:block;
+}
+
+/* عنوان */
+h1{
+  text-align:center;
+  font-size:42px;
+  color:#fbbf24;
+  margin:10px 0 8px;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:18px;
+  opacity:.85;
+}
+
+/* کارت */
+.card{
+  max-width:520px;
+  margin:40px auto;
+  background:#020617;
+  border:1px solid #1f2937;
+  border-radius:18px;
+  padding:34px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:26px;
+}
+
+/* دکمه */
+.btn{
+  display:block;
+  margin:16px auto;
+  padding:16px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:18px;
+  width:80%;
+  max-width:260px;
+  color:#fff;
+}
+
+.fa{ background:#0f766e; }
+.en{ background:#1d4ed8; }
+
+.footer{
+  text-align:center;
+  margin:60px 0 30px;
+  font-size:14px;
+  opacity:.7;
+}
+</style>
 </head>
 
 <body>
-  <div class="box">
-    <h1>Smaily Knowledge Archive</h1>
-    <p>Official bilingual knowledge & publication archive</p>
 
-    <div class="card">
-      <h2>Select Language</h2>
-      <a class="btn fa" href="/archive/fa/">فارسی</a>
-      <a class="btn en" href="/archive/en/">English</a>
-      <p><small>Access is controlled — request-based delivery</small></p>
-    </div>
-  </div>
+<img src="/img/logo-main-light.png" class="logo">
+
+<h1>Smaily Knowledge Archive</h1>
+<div class="subtitle">
+Official bilingual knowledge & publication archive
+</div>
+
+<div class="card">
+  <h2>Select Language</h2>
+
+  <a class="btn fa" href="/archive/fa/">فارسی</a>
+  <a class="btn en" href="/archive/en/">English</a>
+
+</div>
+
+<div class="footer">
+© Smaily Book Store
+</div>
+
 </body>
 </html>
