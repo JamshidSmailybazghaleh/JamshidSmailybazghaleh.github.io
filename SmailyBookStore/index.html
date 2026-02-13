@@ -1,163 +1,179 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Smaily Knowledge Archive</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smaily Knowledge Archive</title>
 
-<style>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#061126;
+      --gold:#fbbf24;
+      --text:#e5e7eb;
+      --muted:rgba(229,231,235,.82);
+      --card:rgba(2,6,23,.55);
+      --stroke:rgba(241,249,247,.18);
+      --shadow:0 20px 60px rgba(0,0,0,.55);
 
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-  text-align:center;
-  overflow-x:hidden;
-}
+      /* کنترل شدت سیمرغ */
+      --simorgh-opacity: .22;     /* اگر کم بود: 0.28 تا 0.35 */
+      --simorgh-blur: 0px;        /* اگر تیز بود: 0.6px تا 1.2px */
+      --simorgh-scale: 140%;      /* 120% تا 170% */
+    }
 
-/* ترام سیمرغ */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    linear-gradient(rgba(15,23,42,.92), rgba(15,23,42,.96)),
-    url("/img/simorgh-hatch.png") center/cover no-repeat;
-  opacity:.22;
-  filter:contrast(1.05) blur(1px);
-  z-index:-1;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 50% 10%, rgba(15,23,42,.95) 0%, rgba(6,17,38,.98) 40%, rgba(2,6,23,1) 100%);
+      overflow-x:hidden;
+    }
 
-/* کانتینر */
-.wrap{
-  max-width:720px;
-  margin:auto;
-  padding:40px 20px 60px;
-}
+    /* لایه‌ی سیمرغ: روی پس‌زمینه، زیر محتوا */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:url("/img/simorgh-hatch.png");
+      background-repeat:no-repeat;
+      background-position:center 18%;
+      background-size:var(--simorgh-scale);
+      opacity:var(--simorgh-opacity);
+      filter: blur(var(--simorgh-blur));
+      pointer-events:none;
+      z-index:0;
+      /* کمک می‌کند روی زمینه تیره بهتر حس شود */
+      mix-blend-mode: screen;
+    }
 
-/* لوگو دایره‌ای بدون کادر مربع */
-.logo{
-  width:120px;
-  height:120px;
-  object-fit:contain;
-  border-radius:50%;
-  background:#ffffff;
-  padding:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-  margin:20px auto 10px;
-  display:block;
-}
+    /* یک وینیت نرم برای حرفه‌ای‌تر شدن */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background: radial-gradient(900px 700px at 50% 30%, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 70%, rgba(0,0,0,.70) 100%);
+      pointer-events:none;
+      z-index:0;
+    }
 
-/* عنوان */
-h1{
-  color:#fbbf24;
-  font-size:36px;
-  margin:18px 0 8px;
-}
+    .wrap{
+      position:relative;
+      z-index:1; /* محتوا روی سیمرغ */
+      max-width:720px;
+      margin:0 auto;
+      padding:44px 18px 36px;
+      text-align:center;
+    }
 
-.subtitle{
-  font-size:18px;
-  opacity:.9;
-  margin-bottom:28px;
-}
+    /* لوگو: بدون کادر مربع، فقط دایره/کتاب نمایش داده شود */
+    .logo{
+      width:120px;
+      height:120px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow: 0 14px 40px rgba(0,0,0,.45);
+      /* اگر لوگو پس‌زمینه‌ی سفید دارد، این کمک می‌کند نرم‌تر دیده شود */
+      background: rgba(255,255,255,.04);
+    }
 
-/* کارت */
-.card{
-  background:#020617;
-  border:1px solid #1f2937;
-  border-radius:18px;
-  padding:34px 22px;
-  margin-top:26px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
-}
+    h1{
+      margin:8px 0 10px;
+      font-size:44px;
+      line-height:1.12;
+      color:var(--gold);
+      letter-spacing:.2px;
+      font-weight:800;
+    }
 
-.card h2{
-  margin-top:0;
-  font-size:22px;
-  margin-bottom:18px;
-}
+    .subtitle{
+      margin:0 auto 26px;
+      max-width:520px;
+      font-size:18px;
+      line-height:1.55;
+      color:var(--muted);
+    }
 
-/* دکمه‌ها */
-.btn{
-  display:block;
-  margin:18px auto;
-  padding:18px 26px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:800;
-  font-size:18px;
-  width:90%;
-  max-width:320px;
-  letter-spacing:.3px;
-  box-shadow:0 6px 22px rgba(0,0,0,.45);
-  text-shadow:0 1px 2px rgba(0,0,0,.45);
-  transition:.15s;
-}
+    .card{
+      margin:22px auto 10px;
+      max-width:560px;
+      padding:28px 22px;
+      border-radius:20px;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-/* فارسی — اصلاح خوانایی */
-.btn-fa{
-  background:#16a085;
-  color:#ffffff;
-  border:2px solid #1abc9c;
-}
+    .card h2{
+      margin:0 0 18px;
+      font-size:26px;
+      font-weight:800;
+      color:#eaf2ff;
+      letter-spacing:.2px;
+    }
 
-.btn-fa:active{
-  transform:scale(.98);
-  background:#138d75;
-}
+    .btn{
+      display:block;
+      width:min(320px, 88%);
+      margin:14px auto;
+      padding:16px 18px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:18px;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
 
-/* انگلیسی */
-.btn-en{
-  background:#1d4ed8;
-  color:#ffffff;
-  border:2px solid #3b82f6;
-}
+    /* دکمه فارسی: خواناتر + کنتراست بیشتر */
+    .btn-fa{
+      background:#0b6b61;
+      color:#ffffff;
+    }
 
-.btn-en:active{
-  transform:scale(.98);
-  background:#1e40af;
-}
+    /* دکمه انگلیسی */
+    .btn-en{
+      background:#1d4ed8;
+      color:#ffffff;
+    }
 
-/* فوتر */
-.footer{
-  margin-top:48px;
-  font-size:14px;
-  opacity:.7;
-}
+    .footer{
+      margin:26px 0 0;
+      font-size:14px;
+      opacity:.72;
+    }
 
-</style>
+    /* ریسپانسیو */
+    @media (max-width:420px){
+      h1{font-size:40px}
+      .logo{width:110px;height:110px}
+      .subtitle{font-size:17px}
+    }
+  </style>
 </head>
 
 <body>
+  <main class="wrap">
+    <!-- اگر می‌خواهید «کادر مربع» حذف شود، بهتر است لوگوی شفاف (PNG) یا لوگوی دایره‌ای آپلود کنید.
+         فعلاً همین را می‌گذاریم؛ اگر فایل شما پس‌زمینه سفید دارد، باز هم دایره‌ای نمایش می‌شود. -->
+    <img class="logo" src="/img/logo-main-light.png" alt="Smaily Book Store Logo">
 
-<div class="wrap">
+    <h1>Smaily<br>Knowledge<br>Archive</h1>
+    <p class="subtitle">Official bilingual knowledge &amp; publication archive</p>
 
-<img src="/img/logo-main-light.png" class="logo">
+    <section class="card">
+      <h2>Select Language</h2>
+      <a class="btn btn-fa" href="/archive/fa/">فارسی</a>
+      <a class="btn btn-en" href="/archive/en/">English</a>
+    </section>
 
-<h1>Smaily Knowledge Archive</h1>
-<div class="subtitle">
-Official bilingual knowledge & publication archive
-</div>
-
-<div class="card">
-<h2>Select Language</h2>
-
-<a class="btn btn-fa" href="/archive/fa/">
-نسخه فارسی
-</a>
-
-<a class="btn btn-en" href="/archive/en/">
-English Version
-</a>
-
-</div>
-
-<div class="footer">
-© Smaily Book Store
-</div>
-
-</div>
-
+    <div class="footer">© Smaily Book Store</div>
+  </main>
 </body>
 </html>
