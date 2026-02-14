@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request Access — Smaily Knowledge Archive</title>
+  <style>
+    :root{
+      --bg:#0f172a; --card:rgba(2,6,23,.78);
+      --text:#e5e7eb; --muted:#cbd5e1; --gold:#fbbf24;
+      --border:rgba(255,255,255,.12); --shadow:0 18px 60px rgba(0,0,0,.55);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      padding:24px 16px;
+      font-family: Tahoma, Arial, system-ui, sans-serif;
+      background:var(--bg); color:var(--text);
+    }
+    .wrap{width:min(820px,100%); text-align:center;}
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); padding:22px 18px;
+      box-shadow:var(--shadow); backdrop-filter: blur(8px);
+      text-align:right;
+    }
+    .top{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; align-items:center;
+      margin-bottom:12px;
+    }
+    .chip{
+      display:inline-block; padding:10px 12px; border-radius:999px;
+      border:1px solid var(--border); background:rgba(255,255,255,.06);
+      color:var(--text); text-decoration:none; font-weight:800; font-size:13px;
+    }
+    h1{margin:6px 0 10px; color:var(--gold); font-size:24px;}
+    p{margin:0 0 12px; line-height:1.9; color:var(--muted); font-size:14px;}
+    .grid{
+      display:grid; grid-template-columns:1fr; gap:12px; margin-top:12px;
+    }
+    @media(min-width:760px){ .grid{grid-template-columns:1fr 1fr;} }
+    .box{
+      border:1px solid var(--border); border-radius:18px;
+      padding:14px; background:rgba(255,255,255,.05);
+    }
+    .btn{
+      display:inline-block; margin-top:10px;
+      padding:12px 14px; border-radius:16px;
+      background:#0f766e; color:#fff; text-decoration:none;
+      font-weight:900; border:1px solid rgba(255,255,255,.12);
+    }
+    .btn2{ background:#1d4ed8; }
+    .small{font-size:12px; opacity:.8; margin-top:8px;}
+    .hr{height:1px; background:rgba(255,255,255,.10); margin:14px 0;}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="card">
+      <div class="top">
+        <a class="chip" href="/">بازگشت به صفحه اصلی</a>
+        <a class="chip" href="/archive/en/">English</a>
+      </div>
+
+      <h1>درخواست دسترسی / خرید / دریافت</h1>
+      <p>
+        این صفحه برای درخواست دسترسی به آثار، دریافت فایل‌ها، یا هماهنگی خرید ایجاد شده است.
+        برخی محتواها به‌صورت «درخواستی» ارائه می‌شوند تا نظم انتشار و حفاظت حقوقی حفظ شود.
+      </p>
+
+      <div class="hr"></div>
+
+      <div class="grid">
+        <div class="box">
+          <b style="color:#fff">روش سریع (ایمیل)</b>
+          <p>روی دکمه زیر بزنید و پیام آماده را ارسال کنید.</p>
+          <a class="btn" href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20Smaily%20Archive&body=سلام%0A%0Aنام%3A%0Aاثر%20یا%20عنوان%3A%0Aنوع%20درخواست%20(دسترسی/خرید/دریافت)%3A%0Aکشور%2Fشهر%3A%0Aتوضیحات%3A%0A" target="_blank" rel="noopener">ارسال درخواست</a>
+          <div class="small">support@smailybookstore.com</div>
+        </div>
+
+        <div class="box" dir="ltr" lang="en">
+          <b style="color:#fff">Quick Method (Email)</b>
+          <p>Tap to send a pre-filled request email.</p>
+          <a class="btn btn2" href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20Smaily%20Archive&body=Hello%0A%0AName%3A%0ATitle%20(or%20Book)%3A%0ARequest%20type%20(access/purchase/delivery)%3A%0ACountry%2FCity%3A%0ANotes%3A%0A" target="_blank" rel="noopener">Send Request</a>
+          <div class="small">support@smailybookstore.com</div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <p class="small">
+        نکته: تا زمان تکمیل صفحات فروش و پرداخت، همه‌ی لینک‌های “مشاهده/دریافت” می‌توانند به همین صفحه هدایت شوند تا هیچ بن‌بستی ایجاد نشود.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
