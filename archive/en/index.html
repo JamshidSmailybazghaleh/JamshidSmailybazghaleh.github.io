@@ -7,188 +7,167 @@
 
   <style>
     :root{
-      --bg:#0f172a;
-      --card:#020617;
-      --text:#e5e7eb;
-      --muted:#cbd5e1;
-      --gold:#fbbf24;
-      --border:#1f2937;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius:18px;
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --accent:#1d4ed8;
+      --border:rgba(15,23,42,.10);
+      --shadow:0 16px 40px rgba(2,6,23,.10);
+      --radius:22px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      padding:22px 14px 28px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       background: var(--bg);
       color: var(--text);
-      position:relative;
-      overflow-x:hidden;
+      padding: 18px 14px 32px;
     }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
-        url("../../img/simorgh-hatch.png") center/cover no-repeat;
-      opacity:.22;
-      filter: contrast(1.05) blur(1px);
-      z-index:-1;
-    }
-
     header{
-      max-width:980px;
-      margin:0 auto 14px;
+      max-width: 980px;
+      margin: 0 auto 12px;
       display:flex;
-      gap:10px;
       align-items:center;
       justify-content:space-between;
-      flex-wrap:wrap;
-    }
-    .left{
-      display:flex;
       gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn{
-      display:inline-block;
-      padding:12px 14px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:800;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(2,6,23,.55);
-      color:#fff;
-    }
-    .btn-gold{
-      background: rgba(251,191,36,.15);
-      border-color: rgba(251,191,36,.35);
-      color: var(--gold);
     }
     .brand{
+      display:flex;align-items:center;gap:10px;
+      text-decoration:none;color:inherit;
       font-weight:900;
-      opacity:.9;
+    }
+    .brand .logo{
+      width:44px;height:44px;border-radius:9999px;
+      background:#fff;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;border:1px solid var(--border);
+    }
+    .brand img{ width:34px; height:auto; display:block; }
+
+    .topActions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .chip{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+      font-size:13px;
     }
 
-    .wrap{ max-width:980px; margin:0 auto; }
-    h1{ margin:10px 0 6px; font-size:28px; color: var(--gold); }
-    .subtitle{ margin:0 0 18px; color: var(--muted); line-height:1.8; }
+    .wrap{ max-width: 980px; margin: 0 auto; }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+    h1{ margin: 8px 0 6px; font-size: 20px; font-weight: 900; }
+    .subtitle{ margin:0 0 14px; color:var(--muted); font-size:13px; line-height:1.8; }
+
+    .notice{
+      background:#fff;border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px; box-shadow: var(--shadow);
+      margin-bottom: 14px;
     }
-    @media(min-width:720px){
-      .grid{ grid-template-columns:1fr 1fr; }
-    }
+
+    .grid{ display:grid; grid-template-columns: 1fr; gap:12px; }
+
     .card{
-      background: rgba(2,6,23,.78);
+      background:var(--card);
       border:1px solid var(--border);
       border-radius: var(--radius);
+      padding: 14px;
       box-shadow: var(--shadow);
-      padding:16px 16px 14px;
-      backdrop-filter: blur(8px);
     }
+
     .tag{
       display:inline-block;
-      font-size:12px;
       padding:6px 10px;
       border-radius:999px;
-      background: rgba(251,191,36,.12);
-      color: var(--gold);
-      font-weight:800;
+      background: rgba(29,78,216,.10);
+      color: var(--accent);
+      font-weight:900;
+      font-size:12px;
       margin-bottom:10px;
     }
-    .title{ margin:0 0 8px; font-size:18px; font-weight:900; }
-    .desc{ margin:0 0 12px; color: var(--muted); line-height:1.8; font-size:14px; }
+    .title{ margin:0 0 6px; font-size:18px; font-weight:900; }
+    .desc{ margin:0 0 12px; color:var(--muted); font-size:13px; line-height:1.9; }
 
-    .actions{ display:flex; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
-    .actionBtn{
-      padding:12px 14px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:900;
-      background:#1d4ed8;
+    .btn{
+      display:inline-block;
+      padding:12px 16px;
+      border-radius: 16px;
+      background: var(--accent);
       color:#fff;
-      border:1px solid rgba(255,255,255,.12);
+      text-decoration:none;
+      font-weight: 900;
+      border:1px solid rgba(0,0,0,.06);
+      -webkit-tap-highlight-color: transparent;
     }
 
-    footer{
-      max-width:980px;
-      margin:14px auto 0;
+    .footer{
+      margin-top: 18px;
+      text-align:center;
       color: var(--muted);
-      font-size:13px;
-      opacity:.9;
+      font-size: 13px;
     }
-    footer a{ color: var(--gold); text-decoration:none; font-weight:800; }
+    .footer a{ color: var(--accent); text-decoration:none; font-weight:900; }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="left">
-      <!-- ✅ back to root -->
-      <a class="btn" href="../../index.html">Back</a>
+    <a class="brand" href="/">
+      <span class="logo"><img src="/img/logo-main-light.png" alt="Smaily" /></span>
+      <span>Smaily Knowledge Archive</span>
+    </a>
 
-      <!-- ✅ go to Persian -->
-      <a class="btn" href="../fa/index.html">نسخه فارسی</a>
-
-      <!-- optional access request -->
-      <a class="btn btn-gold" href="../../payment/">Request Access</a>
+    <div class="topActions">
+      <a class="chip" href="/archive/fa/">فارسی</a>
+      <a class="chip" href="/">Home</a>
     </div>
-
-    <div class="brand">Smaily Knowledge Archive</div>
   </header>
 
   <main class="wrap">
-    <h1>Smaily Knowledge Archive</h1>
-    <p class="subtitle">Official bilingual knowledge &amp; publication archive.</p>
+    <h1>Smaily Knowledge Archive — English</h1>
+    <p class="subtitle">Official archive for works, knowledge structure, and publication pathway (bilingual model).</p>
+
+    <section class="notice">
+      <b>Official Notice:</b>
+      Public display is available; full access to some files is granted by request and verification.
+      <div style="margin-top:10px">
+        Support:
+        <a href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20English%20Archive&body=Hello%2C%0A%0APlease%20review%20my%20request%20for%20access%20to%20the%20English%20archive.%0A%0AName%3A%0ARequest%20purpose%3A%0A" style="color:var(--accent);font-weight:900;text-decoration:none;">support@smailybookstore.com</a>
+      </div>
+    </section>
 
     <section class="grid">
       <article class="card">
-        <span class="tag">PHILOSOPHY</span>
+        <span class="tag">Philosophy / Wisdom</span>
+        <h2 class="title">The Lost Philosophy of Gilan — Wisdom of Deylaman</h2>
+        <p class="desc">Framework for regional wisdom and philosophical tradition (research/encyclopedic file).</p>
+        <a class="btn" href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20Wisdom%20of%20Deylaman&body=Hello%2C%0A%0APlease%20review%20my%20request%20for%20access%20to%20%22Wisdom%20of%20Deylaman%22.%0A%0AName%3A%0ARequested%20access%20level%3A%0A" target="_blank" rel="noopener">Request Access</a>
+      </article>
+
+      <article class="card">
+        <span class="tag">Culture / History</span>
         <h2 class="title">Gilan — The Ancient Land</h2>
-        <p class="desc">Encyclopedic cultural-philosophical work.</p>
-        <div class="actions">
-          <a class="actionBtn" href="../../books/">Open</a>
-        </div>
+        <p class="desc">Cultural-philosophical landscape: nature, identity, and lived tradition.</p>
+        <a class="btn" href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20Gilan%20The%20Ancient%20Land&body=Hello%2C%0A%0APlease%20review%20my%20request%20for%20access%20to%20%22Gilan%20—%20The%20Ancient%20Land%22.%0A%0AName%3A%0ARequested%20access%20level%3A%0A" target="_blank" rel="noopener">Request Access</a>
       </article>
 
       <article class="card">
-        <span class="tag">WISDOM</span>
-        <h2 class="title">The Lost Philosophy of Gilan</h2>
-        <p class="desc">Wisdom traditions and regional philosophy.</p>
-        <div class="actions">
-          <a class="actionBtn" href="../../books/">Open</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">HUMANITY</span>
-        <h2 class="title">A Drop of Kindness</h2>
-        <p class="desc">Stories of compassion and humanity.</p>
-        <div class="actions">
-          <a class="actionBtn" href="../../books/">Open</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <span class="tag">GLOBAL</span>
-        <h2 class="title">Global Proposal Guide</h2>
-        <p class="desc">Academic &amp; international proposal framework.</p>
-        <div class="actions">
-          <a class="actionBtn" href="../../books/">Open</a>
-        </div>
+        <span class="tag">Health / Lifestyle</span>
+        <h2 class="title">The Secret of Longevity</h2>
+        <p class="desc">A practical view on lifestyle, wellbeing, and sustainable habits.</p>
+        <a class="btn" href="mailto:support@smailybookstore.com?subject=Access%20Request%20—%20Longevity&body=Hello%2C%0A%0APlease%20review%20my%20request%20for%20access%20to%20%22The%20Secret%20of%20Longevity%22.%0A%0AName%3A%0ARequested%20access%20level%3A%0A" target="_blank" rel="noopener">Request Access</a>
       </article>
     </section>
-  </main>
 
-  <footer class="wrap">
-    Contact: <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a>
-  </footer>
+    <div class="footer">
+      Support:
+      <a href="mailto:support@smailybookstore.com">support@smailybookstore.com</a>
+    </div>
+  </main>
 </body>
 </html>
