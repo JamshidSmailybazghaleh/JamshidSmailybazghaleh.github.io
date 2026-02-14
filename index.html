@@ -8,17 +8,16 @@
   <style>
     :root{
       --bg:#0f172a;
-      --card:#020617cc;
+      --card:rgba(2,6,23,.78);
       --text:#e5e7eb;
       --muted:#cbd5e1;
       --gold:#fbbf24;
       --border:rgba(255,255,255,.12);
       --shadow:0 18px 60px rgba(0,0,0,.55);
-      --btnRadius:16px;
+      --btnRadius:18px;
     }
 
-    *{ box-sizing:border-box; }
-
+    *{box-sizing:border-box}
     body{
       margin:0;
       min-height:100vh;
@@ -26,136 +25,112 @@
       align-items:center;
       justify-content:center;
       padding:28px 18px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x:hidden;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
       position:relative;
+      overflow-x:hidden;
     }
 
-    /* پس‌زمینه سیمرغ (اختیاری) — مهم: کلیک را نبلعد */
+    /* ✅ سیمرغ (بدون اینکه روی دکمه‌ها بیفتد) */
     body::before{
       content:"";
       position:fixed;
       inset:0;
       background:
-        linear-gradient(rgba(15,23,42,.92), rgba(15,23,42,.94)),
-        url("img/simorgh-hatch.png");
-      background-position:center;
-      background-size:cover;
-      background-repeat:no-repeat;
-      opacity:.22;
+        linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
+        url("/img/simorgh-hatch.png") center/cover no-repeat;
+      opacity:.28;
       filter: contrast(1.05) blur(1px);
-      z-index:0;
-      pointer-events:none;  /* ✅ خیلی مهم برای کار کردن کلیک‌ها */
+      z-index:-1;
+      pointer-events:none; /* ✅ مهم‌ترین خط برای کارکرد دکمه‌ها */
     }
 
     .wrap{
-      width:min(720px, 100%);
+      width:min(720px,100%);
       text-align:center;
-      position:relative;
-      z-index:2;            /* ✅ روی پس‌زمینه */
-      pointer-events:auto;
     }
 
-    /* لوگو: دایره + برش کامل لوگو برای حذف مربع */
     .logoWrap{
       width:180px;
       height:180px;
-      margin:0 auto 18px;
+      margin:0 auto 16px;
       border-radius:9999px;
-      background: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.96);
       display:flex;
       align-items:center;
       justify-content:center;
       box-shadow: 0 10px 40px rgba(0,0,0,.45);
-      overflow:hidden;      /* ✅ برش دایره‌ای */
+      overflow:hidden;
     }
     .logoWrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;     /* ✅ مربع سفید را داخل دایره پر می‌کند */
+      width:150px;
+      height:auto;
       display:block;
     }
 
     h1{
-      margin:0 0 10px;
+      margin: 0 0 10px;
       font-size: clamp(34px, 6vw, 56px);
-      line-height:1.08;
+      line-height:1.1;
       color: var(--gold);
       letter-spacing:.2px;
-      font-weight:800;
     }
-
     .sub{
-      margin:0 0 20px;
-      font-size: clamp(15px, 2.6vw, 18px);
+      margin: 0 0 18px;
+      font-size: clamp(15px, 2.4vw, 18px);
       color: var(--muted);
-      opacity:.95;
+      opacity: .95;
     }
 
     .card{
-      margin:0 auto;
-      width: min(560px, 100%);
+      margin: 0 auto;
+      width:min(560px,100%);
       background: var(--card);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:26px 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 18px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(8px);
-      position:relative;
-      z-index:3;          /* ✅ روی همه چیز */
     }
-
     .card h2{
-      margin:0 0 14px;
-      font-size:22px;
-      letter-spacing:.2px;
+      margin:0 0 10px;
+      font-size: 22px;
       color:#fff;
+      letter-spacing:.2px;
     }
 
     .btn{
       display:block;
-      width: min(320px, 92%);
-      margin:12px auto;
-      padding:16px 18px;
+      width:min(340px, 92%);
+      margin: 12px auto;
+      padding: 16px 18px;
       border-radius: var(--btnRadius);
       text-decoration:none;
-      font-weight:900;
-      font-size:20px;               /* ✅ خواناتر */
+      font-weight: 800;
+      font-size: 18px;
       color:#fff;
-      border:1px solid rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.12);
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
       transform: translateZ(0);
-      position:relative;
-      z-index:10;                   /* ✅ کلیک قطعی */
-      pointer-events:auto;          /* ✅ کلیک قطعی */
       -webkit-tap-highlight-color: transparent;
       cursor:pointer;
     }
-    .btn:active{ transform: scale(.99); }
     .btn:hover{ filter: brightness(1.04); }
 
-    .btn-fa{
-      background:#0f766e;
-      font-family: Tahoma, Arial, system-ui, sans-serif;
-      letter-spacing:0;             /* ✅ فارسی بهتر */
-    }
-    .btn-en{
-      background:#1d4ed8;
-    }
+    .btn-fa{ background:#0f766e; font-family: Tahoma, Arial, system-ui, sans-serif; font-size:20px; }
+    .btn-en{ background:#1d4ed8; }
 
     .note{
-      margin:14px 0 0;
-      font-size:13px;
-      opacity:.75;
+      margin: 14px 0 0;
+      font-size: 13px;
+      opacity: .78;
       color: var(--muted);
     }
-
     .footer{
-      margin-top:16px;
-      font-size:13px;
-      opacity:.7;
+      margin-top: 16px;
+      font-size: 13px;
+      opacity: .7;
       color: var(--muted);
     }
   </style>
@@ -164,28 +139,18 @@
 <body>
   <main class="wrap">
     <div class="logoWrap" aria-label="Smaily logo">
-      <!-- اگر این فایل مربع سفید دارد، همین کد آن را داخل دایره «برش» می‌دهد -->
-      <img src="img/logo-main-light.png" alt="Smaily Book Store logo">
+      <img src="/img/logo-main-light.png" alt="Smaily Book Store logo" />
     </div>
 
-    <h1>Smaily<br>Knowledge<br>Archive</h1>
-    <p class="sub">Official bilingual knowledge &amp; publication archive</p>
+    <h1>Smaily<br/>Knowledge<br/>Archive</h1>
+    <p class="sub">Official bilingual knowledge &amp; publication archive.</p>
 
     <section class="card">
       <h2>Select Language</h2>
 
-      <!-- ✅ مسیرها را مطمئن کردیم: هم absolute هم onclick بکاپ -->
-      <a class="btn btn-fa"
-         href="/archive/fa/index.html"
-         onclick="window.location.href='/archive/fa/index.html'; return false;">
-        فارسی
-      </a>
-
-      <a class="btn btn-en"
-         href="/archive/en/index.html"
-         onclick="window.location.href='/archive/en/index.html'; return false;">
-        English
-      </a>
+      <!-- ✅ مسیرهای مطلق: همیشه درست -->
+      <a class="btn btn-fa" href="/archive/fa/">فارسی</a>
+      <a class="btn btn-en" href="/archive/en/">English</a>
 
       <p class="note">Access is controlled — request-based delivery</p>
     </section>
