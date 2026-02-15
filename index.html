@@ -1,161 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Smaily Knowledge Archive</title>
+<meta charset="UTF-8">
+<title>Jamshid Smaily — Official Publication Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#0f172a;
-      --card:rgba(2,6,23,.78);
-      --text:#e5e7eb;
-      --muted:#cbd5e1;
-      --gold:#fbbf24;
-      --border:rgba(255,255,255,.12);
-      --shadow:0 18px 60px rgba(0,0,0,.55);
-      --btnRadius:18px;
-    }
+<style>
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px 18px;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      position:relative;
-      overflow-x:hidden;
-    }
+body{
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:40px;
+color:#222;
+}
 
-    /* ✅ سیمرغ (بدون اینکه روی دکمه‌ها بیفتد) */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        linear-gradient(rgba(15,23,42,.90), rgba(15,23,42,.94)),
-        url("/img/simorgh-hatch.png") center/cover no-repeat;
-      opacity:.28;
-      filter: contrast(1.05) blur(1px);
-      z-index:-1;
-      pointer-events:none; /* ✅ مهم‌ترین خط برای کارکرد دکمه‌ها */
-    }
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+box-shadow:0 4px 20px rgba(0,0,0,0.08);
+border-radius:8px;
+}
 
-    .wrap{
-      width:min(720px,100%);
-      text-align:center;
-    }
+h1{
+margin-top:0;
+font-weight:600;
+}
 
-    .logoWrap{
-      width:180px;
-      height:180px;
-      margin:0 auto 16px;
-      border-radius:9999px;
-      background: rgba(255,255,255,.96);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 10px 40px rgba(0,0,0,.45);
-      overflow:hidden;
-    }
-    .logoWrap img{
-      width:150px;
-      height:auto;
-      display:block;
-    }
+.subtitle{
+color:#666;
+margin-bottom:30px;
+}
 
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(34px, 6vw, 56px);
-      line-height:1.1;
-      color: var(--gold);
-      letter-spacing:.2px;
-    }
-    .sub{
-      margin: 0 0 18px;
-      font-size: clamp(15px, 2.4vw, 18px);
-      color: var(--muted);
-      opacity: .95;
-    }
+.section-title{
+margin-top:40px;
+font-size:20px;
+font-weight:600;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
 
-    .card{
-      margin: 0 auto;
-      width:min(560px,100%);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-    .card h2{
-      margin:0 0 10px;
-      font-size: 22px;
-      color:#fff;
-      letter-spacing:.2px;
-    }
+.book{
+margin-top:15px;
+}
 
-    .btn{
-      display:block;
-      width:min(340px, 92%);
-      margin: 12px auto;
-      padding: 16px 18px;
-      border-radius: var(--btnRadius);
-      text-decoration:none;
-      font-weight: 800;
-      font-size: 18px;
-      color:#fff;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      transform: translateZ(0);
-      -webkit-tap-highlight-color: transparent;
-      cursor:pointer;
-    }
-    .btn:hover{ filter: brightness(1.04); }
+.book a{
+text-decoration:none;
+color:#0a58ca;
+font-weight:500;
+}
 
-    .btn-fa{ background:#0f766e; font-family: Tahoma, Arial, system-ui, sans-serif; font-size:20px; }
-    .btn-en{ background:#1d4ed8; }
+.book a:hover{
+text-decoration:underline;
+}
 
-    .note{
-      margin: 14px 0 0;
-      font-size: 13px;
-      opacity: .78;
-      color: var(--muted);
-    }
-    .footer{
-      margin-top: 16px;
-      font-size: 13px;
-      opacity: .7;
-      color: var(--muted);
-    }
-  </style>
+.footer{
+margin-top:40px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+
 </head>
 
 <body>
-  <main class="wrap">
-    <div class="logoWrap" aria-label="Smaily logo">
-      <img src="/img/logo-main-light.png" alt="Smaily Book Store logo" />
-    </div>
 
-    <h1>Smaily<br/>Knowledge<br/>Archive</h1>
-    <p class="sub">Official bilingual knowledge &amp; publication archive.</p>
+<div class="container">
 
-    <section class="card">
-      <h2>Select Language</h2>
+<h1>Jamshid Smaily</h1>
 
-      <!-- ✅ مسیرهای مطلق: همیشه درست -->
-      <a class="btn btn-fa" href="/archive/fa/">فارسی</a>
-      <a class="btn btn-en" href="/archive/en/">English</a>
+<div class="subtitle">
+Official Publication Archive — Global Edition<br>
+Permanent Record of Authored Works
+</div>
 
-      <p class="note">Access is controlled — request-based delivery</p>
-    </section>
 
-    <div class="footer">© Smaily Book Store</div>
-  </main>
+<div class="section-title">Published Works</div>
+
+
+<div class="book">
+<a href="/archive/en/human-light-future.html">
+Human, Light, Future
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/global-proposal-guide.html">
+The Global Proposal Guide
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/secret-of-longevity.html">
+The Secret of Longevity
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/phoenix-of-deylaman.html">
+Phoenix of Deylaman: The Silent Flight of Northern Wisdom
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/echoes-of-gilan.html">
+Echoes of Gilan
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/wisdom-structure-of-gilan.html">
+Wisdom Structure of Gilan
+</a>
+</div>
+
+
+<div class="book">
+<a href="/archive/en/comprehensive-publishing-project.html">
+Comprehensive Publishing Project: Final Report
+</a>
+</div>
+
+
+
+<div class="section-title">Archive Information</div>
+
+<div class="footer">
+
+Author: Jamshid Smaily<br>
+Status: Active<br>
+Archive Type: Official Digital Publication Record<br>
+Distribution: Global<br>
+Format: Permanent HTML Archive<br>
+Verification: Public<br>
+
+<br>
+
+© 2026 Jamshid Smaily. All rights reserved.
+
+</div>
+
+
+</div>
+
 </body>
 </html>
